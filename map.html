@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Gagandeep Nagpal -->
+<html>
+	<head>
+		<meta charset =utf-8 />
+		<title> Map and coloring </title>
+		 <!-- For including JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class =wrap > <!-- Wrapper class of the map and lights -->
+			<img src="./Screenshot (2).png" width=80% height=400px >
+			<div class="color " id="divUsit"></div>
+			<div class="color " id="divUsct"></div>	
+			<div class="color " id="divPlayground"></div>
+		<div>
+		
+		<!-- CheckBoxes -->
+		<input type="checkbox" id="checkUsit" onclick="checkAll();" > USIT <br/>
+		<input type="checkbox" id="checkUsct" onclick="checkAll();"> USCT <br/>
+		<input type="checkbox"   id="checkPlayground" onclick="checkAll();" > PLayground <br/>
+		<script >
+		// it is triggered when any checkBox is clicked 
+			function checkAll()
+			{
+				var usit =(document.getElementById("checkUsit")).checked;
+				var usct =(document.getElementById("checkUsct")).checked;
+				var playground =(document.getElementById("checkPlayground")).checked;
+				
+				if(usit===true)
+				{
+					$('#divUsit').addClass("usit");
+				}
+				else
+				{
+					$('#divUsit').removeClass("usit");
+				}
+				if(usct==true)
+				{
+					$('#divUsct').addClass("usct");
+				}
+				else
+				{
+					$('#divUsct').removeClass("usct");
+				}
+				if(playground==true)
+				{
+					$('#divPlayground').addClass("playground");
+				}
+				else
+				{
+					$('#divPlayground').removeClass("playground");
+				}
+			}
+		</script>
+	</body>
+	
+	<!-- css styling -->
+	<!-- internal style sheet -->
+	
+	<style>
+		.wrap
+		{
+			position :relative;
+		}
+		
+		/* To change the size , shape and appearance of light */
+		.color 
+		{
+			width: 20px;
+			height: 20px;
+			border-radius:10px;
+			-webkit-filter: blur(5px);
+			
+		}
+		/*to change the co-ordinates of light , just change top and left attribute */
+		.usit
+		{
+			background: rgba(0,0,255,1);
+			position :absolute;
+			top:40%;
+			left:53%;
+		}
+		/*to change the co-ordinates of light , just change top and left attribute */
+		.usct
+		{
+			background: rgba(255,0,0,1);
+			position :absolute;
+			top:51%;
+			left:51%;
+		}
+		/*to change the co-ordinates of light , just change top and left attribute */
+		.playground 
+		{
+			background: rgba(0,255,0,1);
+			position :absolute;
+			top:53%;
+			left:31%;
+		}
+	</style>
+	
+</html>
